@@ -22,7 +22,6 @@ public class ICommandIterator implements Iterator{
         this.cla = cla;
     }
     
-    
     @Override
     public Object next() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
