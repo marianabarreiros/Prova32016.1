@@ -14,15 +14,23 @@ import receiver.Calculadora;
  */
 public class SomaCommand implements Command{
     private Calculadora calc;
+    private double num;
+    
+
+    public SomaCommand(Calculadora calc, double num) {
+        this.calc = calc;
+        this.num = num;
+    }
+    
     
     @Override
     public void execute() {
-        calc.somar();
+        calc.somar(num);
     }
 
     @Override
     public void undo() {
-        calc.subtrair();
+        calc.subtrair(num);
     }
 
     @Override

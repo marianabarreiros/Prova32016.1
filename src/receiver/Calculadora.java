@@ -11,27 +11,25 @@ package receiver;
  */
 public class Calculadora {
     private double num1;
-    private double num2;
 
-    public Calculadora(double num1, double num2) {
-        this.num1 = num1;
-        this.num2 = num2;
+    public Calculadora() {
+        this.num1 = 0;
     }
     
-    public double somar(){
-        return num1 + num2;
+    public void somar(double num){
+        num1 +=num;
     }
     
-    public double subtrair(){
-        return num1 - num2;
+    public void subtrair(double num){
+        num1 -=num;
     }
     
-    public double multiplicacao(){
-        return num1 * num2;
-    }
-    
-    public double divisao(){
-        return num1 / num2;
-    }
+//    public void multiplicacao(){
+//         num1 * num2;
+//    }
+//    
+//    public void divisao(){
+//         num1 / num2;
+//    }
     
 }

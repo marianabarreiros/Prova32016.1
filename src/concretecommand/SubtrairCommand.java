@@ -14,15 +14,21 @@ import receiver.Calculadora;
  */
 public class SubtrairCommand implements Command{
     private Calculadora calc;
-    
+    private double num;
+
+    public SubtrairCommand(Calculadora calc, double num) {
+        this.calc = calc;
+        this.num = num;
+    }
+                      
     @Override
     public void execute() {
-        calc.subtrair();
+        calc.subtrair(num);
     }
 
     @Override
     public void undo() {
-        calc.somar();
+        calc.somar(num);
     }
 
     @Override
