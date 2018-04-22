@@ -15,6 +15,7 @@ import java.util.Stack;
 public class UndoMeneger {
     private Stack<Command> undoStack = new Stack<Command>();
     private Stack<Command> redoStack = new Stack<Command>();
+    private Stack<Command> historicoStack = new Stack<Command>();
 
     public Stack<Command> getUndoStack() {
         return undoStack;
@@ -23,10 +24,15 @@ public class UndoMeneger {
     public Stack<Command> getRedoStack() {
         return redoStack;
     }
+    
+    public Stack<Command> getHistoricoStack() {
+        return historicoStack;
+    }
 
     public void execute(Command command) {
         command.execute();
         undoStack.push(command);
+        historicoStack.push(command);
         redoStack.clear();
     }
 

@@ -7,6 +7,7 @@ package concretecommand;
 
 import Command.Command;
 import receiver.Calculadora;
+import iterator.Iterator;
 
 /**
  *
@@ -37,5 +38,6 @@ public class SomaCommand implements Command{
     public void redo() {
         execute();
     }
+
     
 }

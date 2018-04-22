@@ -8,9 +8,11 @@ package test;
 import Command.Command;
 import concretecommand.SomaCommand;
 import concretecommand.SubtrairCommand;
+import concreteiterators.ICommandIterator;
 import involker.UndoMeneger;
 import java.util.Stack;
 import receiver.Calculadora;
+import iterator.Iterator;
 
 /**
  *
@@ -32,12 +34,19 @@ public class RunApp {
         meneger.undo();
         meneger.redo();
         
-        Stack<Command> undoStack = new Stack<Command>();
+        Stack<Command> undoStack = new Stack<Command>(); //histórico
 	Stack<Command> redoStack = new Stack<Command>();
+	Stack<Command> historicoStack = new Stack<Command>();
        
         System.out.println(meneger.getUndoStack());
         System.out.println(meneger.getRedoStack());
+        System.out.println(meneger.getHistoricoStack());
         
+        Iterator i = new ICommandIterator(undoStack, SomaCommand.class);
+//        
+//        while (i.hasNext()){
+//            Command c = i.next();
+//        }
         
         
     }
